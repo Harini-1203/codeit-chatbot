@@ -1,0 +1,96 @@
+src/ChatBot.css
+* {
+    box-sizing: border-box;
+}
+
+#chat-page{
+    background-image: url('../public/images/background.jpg');
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: 100vw;
+}
+
+
+#chat-container {
+    border: 1px solid #f3f3f3;
+    border-radius: 10px;
+    width: 70vw;    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: rgb(123, 202, 214);
+background: linear-gradient(120deg,#68acb6 0%, rgb(185, 194, 221) 40%, rgb(123, 202, 214) 100%);
+}
+
+#chat {
+    height: 80vh;
+    padding: 50px 100px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+
+#chat .single-chat {
+    margin: 0 0 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #e0e0e0;
+    width: fit-content;
+}
+.bot-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 70% !important;
+}
+
+#chat img{
+    width: 15%;
+    border-radius: 100%;
+    display:inline-flex;
+}
+
+.you{
+    margin: 10px 0 10px auto !important;
+}
+
+#input-container {
+    display: flex;
+    margin-bottom: 30px;
+    width: 60vw;
+    justify-content: center;
+    
+}
+
+#input {
+    
+    padding: 15px;
+    border: none;
+    width: 50vw;
+    margin-left: 200px;
+    border-radius: 10px 0 0 10px;
+    font-size: 1.2rem;
+
+}
+#input:focus {
+    outline: none;
+}
+input::placeholder{
+    font-size: 1rem;
+}
+#send {
+    padding: 10px 20px;
+    margin-right: 100px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+
+#send:hover {
+    background: #0056b3;
+}
