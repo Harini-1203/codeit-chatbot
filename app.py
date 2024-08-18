@@ -4,7 +4,7 @@ import nltk
 import spacy
 import re
 from flask_cors import CORS
-from c2 import generate_login_form, cssLogin
+from c2 import *
 
 # Download necessary NLP models
 nltk.download('punkt')
@@ -63,6 +63,11 @@ def extract_info(message):
     nav_match = re.search(r'navbar', message)
     login_form_match = re.search(r'login\s*form', message)
     form_match = re.search(r'form', message)
+    card_match=re.search(r'card',message)
+    hero_match=re.search(r'hero',message)
+    table_match=re.search(r'table',message)
+    alert_match=re.search(r'alert',message)
+    footer_match=re.search(r'footer',message)
 
     info = {
         'inputs': [],
@@ -74,6 +79,11 @@ def extract_info(message):
         'navbar': bool(nav_match),
         'form': bool(form_match),
         'login_form': bool(login_form_match),
+        'card':bool(card_match),
+        'table':bool(table_match),
+        'hero':bool(hero_match),
+        'alert':bool(alert_match),
+        'footer':bool(footer_match)
     }
 
     for count, input_type in form_elements:
@@ -128,9 +138,28 @@ def generate_code(info):
     js = ""
 
     if info['navbar']:
-        html += "<nav>\n"
-        html += "  <h1>Navbar</h1>\n"
-        html += "</nav>\n"
+        html += generate_navbar()
+        css +=cssNav()
+       
+    if info['card']:
+        html +=generate_cards()
+        css += cssCards()
+
+    if info['table']:
+        html +=generate_table()
+        css += cssTable()
+
+    if info['hero']:
+        html += generate_hero_section()
+        css+= cssHero()
+
+    if info['alert']:
+        html+= generate_alerts()
+        css += cssAlerts()
+
+    if info['footer']:
+        html += generate_footer()
+        css += cssFooter()
 
     if info['login_form']:
         if not info['inputs']:
@@ -164,7 +193,7 @@ def generate_code(info):
 
     if info['background_color']:
         css += f"""
-        body {{
+        component {{
         background-color: {info['background_color']};
         }}"""
 
@@ -180,7 +209,7 @@ def generate_code(info):
     </style>""", ""
     else:
         return html, css + """
-    </style>
+</style>
     """, js
 
 if __name__ == '__main__':

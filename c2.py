@@ -8,7 +8,9 @@ def generate_navbar():
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <style>
+    """
+def cssNav():
+    return """
         nav{
             width:100%;
             height:200px;
@@ -25,9 +27,7 @@ def generate_navbar():
             color: white;
             text-decoration: none;
         }
-    </style>
-    """
-
+"""
 
 # Generate HTML/CSS code for a form
 def generate_form_code(num_inputs):
@@ -131,9 +131,9 @@ def cssform():
         }
     """
 # Generate HTML/CSS code for cards
-def generate_cards(num_cards):
+def generate_cards():
     card_html = ''
-    for i in range(num_cards):
+    for i in range(1):
         card_html += f"""
         <div class="card">
             <img src="" alt="">
@@ -186,15 +186,7 @@ def generate_centered_component():
         }
     </style>
     """
-def csscenter(component):
-    return """
-    {component} {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-    }
-    """
+
 
 # Generate HTML/CSS code for a button that links to another page
 def click_Button():
@@ -242,8 +234,7 @@ def generate_table():
 </table>
     """
 def cssTable():
-    return
-"""
+    return"""
     table {
             width: 50%;
             border-collapse: collapse;
@@ -257,13 +248,13 @@ def cssTable():
         background-color: #f2f2f2;
     }
 """
-#herSection
-def generate_hero_section(arr):
+#heroSection
+def generate_hero_section():
     return f"""
     <section class="hero">
         <div class="hero-background" style="background-image: url(background_image);"></div>
-        <h1>{arr[0]}</h1>
-        <p>{arr[1]}</p>
+        <h1></h1>
+        <p></p>
     </section>
     """
 def cssHero():
@@ -286,14 +277,16 @@ def cssHero():
         }}
     """
 
-def generate_footer(copyright_text, social_media_links):
+def generate_footer():
     return f"""
     <footer>
-        <p>{copyright_text}</p>
+        <p>copyright_text</p>
         <ul class="social-media">
-            {social_media_links}
+            social_media_links
         </ul>
-    </footer>"""
+    </footer>
+    
+    """
 def cssFooter():
     return """
         footer {{
@@ -315,13 +308,12 @@ def cssFooter():
             color: white;
             text-decoration: none;
         }}
-    </style>
     """
 
-def generate_alerts(alert_type, alert_text):
+def generate_alerts():
     return f"""
-    <div class="alert {alert_type}">
-        {alert_text}
+    <div class="alert alert_type">
+        alert_text
     </div>"""
 def cssAlerts():
     return """

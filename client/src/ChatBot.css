@@ -53,6 +53,14 @@ background: linear-gradient(120deg,#68acb6 0%, rgb(185, 194, 221) 40%, rgb(123, 
     display:inline-flex;
 }
 
+.bot pre {
+    width: 500px; /* Adjust the width as needed */
+    max-width: 100%; /* Ensure it doesn't exceed the parent container */
+     /* Add scrollbars if needed */
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    overflow: auto;
+}
+
 .you{
     margin: 10px 0 10px auto !important;
 }
