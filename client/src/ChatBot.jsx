@@ -54,7 +54,7 @@ const ChatBot = () => {
                             <p className='you single-chat'><strong>You:</strong> {chatEntry.inp}</p>
                             <div className='bot-div single-chat'>
                                 <img src="/images/bot.png"/>
-                                <span className='bot single-chat'>{chatEntry.out}</span>
+                                <pre className='bot single-chat'>{chatEntry.out}</pre>
                             </div>
                         </div>
                     ))}
