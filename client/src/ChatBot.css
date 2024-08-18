@@ -3,7 +3,8 @@ src/ChatBot.css
     box-sizing: border-box;
 }
 
-#chat-page{ 
+#chat-page{
+    background-image: url('../public/images/background.jpg');
     height: 100vh;
     display: flex;
     align-items: center;
@@ -47,7 +48,7 @@ background: linear-gradient(120deg,#68acb6 0%, rgb(185, 194, 221) 40%, rgb(123, 
 }
 
 #chat img{
-    width: 200px;
+    width: 100px;
     border-radius: 100%;
     display:inline-flex;
 }
